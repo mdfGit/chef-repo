@@ -1,0 +1,21 @@
+"gcc -o conftest -I/opt/chef/embedded/include/ruby-1.9.1/x86_64-darwin11.2.0 -I/opt/chef/embedded/include/ruby-1.9.1/ruby/backward -I/opt/chef/embedded/include/ruby-1.9.1 -I. -I/opt/chef/embedded/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch x86_64 -L/opt/chef/embedded/lib -I/opt/chef/embedded/include -I/opt/chef/embedded/include/ncurses -O3 -g -pipe -fno-common conftest.c  -L. -L/opt/chef/embedded/lib -L/opt/chef/embedded/lib -L. -arch x86_64 -R/opt/chef/embedded/lib -L/opt/chef/embedded/lib -I/opt/chef/embedded/include -I/opt/chef/embedded/include/ncurses  -m64   -lruby.1.9.1  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/opt/chef/embedded/include/ruby-1.9.1/x86_64-darwin11.2.0 -I/opt/chef/embedded/include/ruby-1.9.1/ruby/backward -I/opt/chef/embedded/include/ruby-1.9.1 -I. -I/opt/chef/embedded/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch x86_64 -L/opt/chef/embedded/lib -I/opt/chef/embedded/include -I/opt/chef/embedded/include/ncurses -O3 -g -pipe -fno-common conftest.c  -L. -L/opt/chef/embedded/lib -L/opt/chef/embedded/lib -L. -arch x86_64 -R/opt/chef/embedded/lib -L/opt/chef/embedded/lib -I/opt/chef/embedded/include -I/opt/chef/embedded/include/ncurses  -m64   -lruby.1.9.1 -arch x86_64 -L/opt/chef/embedded/lib -I/opt/chef/embedded/include -I/opt/chef/embedded/include/ncurses -O3 -g -pipe -fno-common -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {
+4:   int i = 1;
+5:   __sync_bool_compare_and_swap(&i, 1, 4);
+6:   return (i != 4);
+7: }
+/* end */
+
+./conftest
